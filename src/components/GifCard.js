@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function GifCard() {
-    return (
-        <div>
+export default class GifCard extends Component {
+    render() {
+        return (
+            <div>
             <h1>Gif Card</h1>
-        </div>
-    )
+            </div>
+        )
+    }
 }

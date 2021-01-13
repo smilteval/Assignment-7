@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import GifCard from './GifCard';
+//import GifCard from './GifCard';
 
 export default class SearchField extends Component {
 
@@ -7,7 +8,7 @@ export default class SearchField extends Component {
         super();
         this.state = {
             gifName: null,
-            gifData: [],
+            gifs: [],
         };
     }
 
@@ -34,15 +35,14 @@ export default class SearchField extends Component {
             let data = await response.json();
 
             this.setState({
-                gifData: data, //set the city data to the data received from an api
+                gifs: data.data //set the city data to the data received from an api
             });
-            console.log(this.state.gifData);
         }
 
         catch(error){
             console.log(error);
             this.setState({
-                gifData: []
+                gifs: []
             });
         }
     }    
@@ -51,21 +51,28 @@ export default class SearchField extends Component {
     render(){
         return (
             <div>
-                <input
-                    type="text"
-                    name="searchInput"
-                    placeholder="Search for a gif!"
-                    onChange={this.handleChange}
-                >
-                </input>
+                
+                    <input
+                        type="text"
+                        name="searchInput"
+                        placeholder="Search for a gif!"
+                        onChange={this.handleChange}
+                    />
 
-                <button
-                    id="search-btn"
-                    onClick={() => {this.getData()}}
-                >
-                    Search
-                </button>
+                    <button
+                        id="search-btn"
+                        onClick={() => {this.getData()}}
+                    >
+                        Search
+                    </button>
+                
 
+                {this.state.gifs.map(gif=>{
+                    return (
+                        <GifCard/>
+                    )
+                })}
+                
             </div>
         )
     }
