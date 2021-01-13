@@ -69,7 +69,7 @@ export default class SearchField extends Component {
 
                 {this.state.gifs.map(gif=>{
                     return (
-                        <GifCard/>
+                        <GifCard image={gif.images.original.url}/>
                     )
                 })}
                 
