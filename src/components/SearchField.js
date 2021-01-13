@@ -1,9 +1,29 @@
 import React from 'react'
 
+class Zip extends React.Component{
+    constructor(){
+        super();
+        this.state = {
+            searchInput: ""
+        }
+    }
+}
+
+
 export default function SearchField() {
     return (
         <div>
-            <h1>THE Search field</h1>
+            <form>
+                <input
+                type="text"
+                name="searchInput"
+                placeholder="Search for a gif!"
+                >
+                </input> 
+                <input
+                type="submit">
+                </input>
+            </form>
         </div>
     )
 }
