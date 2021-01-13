@@ -12,23 +12,29 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.SearchField{
+.SearchField {
   /* text box to search */
-padding-top: 20px;
+  padding-top: 20px;
+  /* background: radial-gradient(circle, black, white); */
 }
 
 .App-header {
   /* Header where it says search GIPHY */
-  background-color: #5c4aff;
+  background: url(https://media4.giphy.com/headers/juanbilly/awbw8EaeaHtc.gif); 
+  /* make into random gif? */
+  height:200px;
+
+
+  /* background-color: #5c4aff; */
   min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 3vmin);
-  color: rgb(255, 202, 255);
-  
+  color: rgb(253, 1, 253);
 }
+
 
 .App-link {
   color: #61dafb;
