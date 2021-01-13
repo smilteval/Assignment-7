@@ -5,8 +5,14 @@ import SearchField from './components/SearchField';
 function App() {
   return (
     <div className="App">
-      <h1>Our app</h1>
+      <div className="App-header">
+
+      <h1>Search GIPHY </h1>
+      </div>
+
+      <div className="SearchField">
       <SearchField/>
+      </div>
       <GifCard/>
     </div>
   );
