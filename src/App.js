@@ -10,9 +10,9 @@ function App() {
       <h1>Search GIPHY </h1>
       </div>
 
-      <div className="SearchField">
-      <SearchField/>
-      </div>
+        <div className="SearchField">
+          <SearchField/>
+        </div>
       <GifCard/>
     </div>
   );
