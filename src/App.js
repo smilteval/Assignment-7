@@ -1,6 +1,7 @@
 import './App.css';
 import GifCard from './components/GifCard';
 import SearchField from './components/SearchField';
+import TrendingGifs from './components/TrendingGifs'
 
 function App() {
   return (
@@ -9,9 +10,12 @@ function App() {
 
       <h1>Search GIPHY </h1>
       </div>
-
+        
         <div className="SearchField">
           <SearchField/>
+        </div>
+        <div class="trending-container">
+          <TrendingGifs />
         </div>
       <GifCard/>
     </div>
