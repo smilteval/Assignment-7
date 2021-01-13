@@ -28,7 +28,7 @@ class TrendingGifs extends React.Component {
 
   render() {
     return (
-        <div> test
+        <div>
         { this.state.gifList.map(gif => {
             return (
                 <div class="container">
