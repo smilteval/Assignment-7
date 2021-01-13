@@ -12,8 +12,9 @@ function App() {
 
         <div className="SearchField">
           <SearchField/>
-        </div>
+        
       <GifCard/>
+      </div>
     </div>
   );
 }
