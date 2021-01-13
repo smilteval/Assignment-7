@@ -9,7 +9,7 @@ export default class SearchField extends React.Component {
                     <input
                         type="text"
                         name="searchInput"
-                        placeholder="Search for a gif!"
+                        placeholder="Search for a GIF!"
                     >
                     </input> 
                     <input

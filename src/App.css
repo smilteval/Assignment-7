@@ -12,8 +12,13 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.SearchField{
+  /* text box to search */
+padding-top: 20px;
+}
 
 .App-header {
+  /* Header where it says search GIPHY */
   background-color: #5c4aff;
   min-height: 10vh;
   display: flex;
