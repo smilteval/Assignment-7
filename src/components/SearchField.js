@@ -1,29 +1,22 @@
-import React from 'react'
+import React,{Component} from 'react'
 
-class Zip extends React.Component{
-    constructor(){
-        super();
-        this.state = {
-            searchInput: ""
-        }
+export default class SearchField extends React.Component {
+
+    render(){
+        return (
+            <div>
+                <form>
+                    <input
+                        type="text"
+                        name="searchInput"
+                        placeholder="Search for a gif!"
+                    >
+                    </input> 
+                    <input
+                        type="submit">
+                    </input>
+                </form>
+            </div>
+        )
     }
-}
-
-
-export default function SearchField() {
-    return (
-        <div>
-            <form>
-                <input
-                type="text"
-                name="searchInput"
-                placeholder="Search for a gif!"
-                >
-                </input> 
-                <input
-                type="submit">
-                </input>
-            </form>
-        </div>
-    )
 }
