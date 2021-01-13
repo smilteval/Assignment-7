@@ -10,13 +10,6 @@ function App() {
       <div className="App-header">
         <h1>Search GIPHY </h1>
       </div>
-<<<<<<< HEAD
-
-      <div className="SearchField">
-        <SearchField/>
-      </div>
-    
-=======
         
         <div className="SearchField">
           <SearchField/>
@@ -25,7 +18,6 @@ function App() {
           <TrendingGifs />
         </div>
       <GifCard/>
->>>>>>> trendGifs
     </div>
   );
 }
