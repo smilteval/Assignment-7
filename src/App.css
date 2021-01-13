@@ -48,3 +48,11 @@
     transform: rotate(360deg);
   }
 }
+
+.gifList{
+  display: flex;
+}
+
+#gif{
+  height: 20vh;
+}
