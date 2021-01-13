@@ -3,21 +3,27 @@ import GifCard from './GifCard';
 
 export default class SearchField extends Component {
 
-
     constructor(){
         super();
         this.state = {
-            gitName: null,
+            gifName: null,
             gifData: [],
         };
     }
+
+    //every time a user enters a gif name, update it
+    handleChange = event => {
+        console.log("inside handleChange")
+        this.setState({gifName: event.target.value});
+    }
+
 
     //get data from an api
     getData = async () => {
         console.log("inside getData")
         try{
             //get a response from an api
-            let response = await fetch("http://api.giphy.com/v1/gifs/search?q=cat&api_key=W8fWbmNISlnnYSoZC6fsnCxrmYHlodt8");
+            let response = await fetch("http://api.giphy.com/v1/gifs/search?q="+this.state.gifName+"&api_key=W8fWbmNISlnnYSoZC6fsnCxrmYHlodt8");
             
             //if there was an error, print it
             if(!response.ok){
@@ -49,6 +55,7 @@ export default class SearchField extends Component {
                     type="text"
                     name="searchInput"
                     placeholder="Search for a gif!"
+                    onChange={this.handleChange}
                 >
                 </input>
 
