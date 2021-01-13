@@ -14,7 +14,7 @@ function App() {
         <div className="SearchField">
           <SearchField/>
         </div>
-        <div class="trending-container">
+        <div className="trending-container">
           <TrendingGifs />
         </div>
       <GifCard/>

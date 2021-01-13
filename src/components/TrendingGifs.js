@@ -5,27 +5,40 @@ class TrendingGifs extends React.Component {
   constructor() {
     super();
     this.state = {
-      gifList: [],
+      gifList: []
     };
+    this.componentDidMount=this.componentDidMount.bind(this);
   }
 
   componentDidMount() {
+    console.log("In Mount");
     fetch(
       "http://api.giphy.com/v1/gifs/trending?api_key=W8fWbmNISlnnYSoZC6fsnCxrmYHlodt8"
     )
-      .then((response) => response.json())
-      .then((data) => {
-          console.log(data.data)
+      .then(response => response.json())
+      .then((res) => {
+          console.log(res.data)
         this.setState({
-          gifList: [data.data],
+          gifList: res.data,
         });
         console.log(this.state.gifList);
       })
   }
 
+
   render() {
-    return <div class="container">{this.state.gifList}</div>;
-  }
-}
+    return (
+        <div> test
+        { this.state.gifList.map(gif => {
+            return (
+                <div class="container">
+                <img src={gif.images.original.url} alt="gif"/>
+                </div>
+            )
+
+        })}
+        </div>
+        )}
+    }
 
 export default TrendingGifs;
