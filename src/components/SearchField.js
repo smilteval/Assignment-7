@@ -3,7 +3,7 @@ import React from 'react'
 export default function SearchField() {
     return (
         <div>
-            <h1>Search field</h1>
+            <h1>THE Search field</h1>
         </div>
     )
 }
