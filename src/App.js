@@ -1,6 +1,7 @@
 import './App.css';
 import GifCard from './components/GifCard';
 import SearchField from './components/SearchField';
+import TrendingGifs from './components/TrendingGifs';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
 
       <div className="SearchField">
       <SearchField/>
+      <TrendingGifs/>
       </div>
       <GifCard/>
     </div>
