@@ -45,36 +45,39 @@ export default class SearchField extends Component {
                 gifs: []
             });
         }
+        console.log(this.state.gifs)
     }    
 
 
     render(){
         return (
             <div>
-                
-                    <input
-                        type="text"
-                        name="searchInput"
-                        placeholder="Search for a gif!"
-                        onChange={this.handleChange}
-                    />
+                <input
+                    type="text"
+                    name="searchInput"
+                    placeholder="Search for a gif!"
+                    onChange={this.handleChange}
+                />
 
-                    <button
-                        id="search-btn"
-                        onClick={() => {this.getData()}}
-                    >
-                        Search
-                    </button>
+                <button
+                    id="search-btn"
+                    onClick={() => {this.getData()}}
+                >
+                    Search
+                </button>
                 
+                <br/>
+
                 <div id="gifList">
-                    <br/>
                     {this.state.gifs.map(gif=>{
                         return (
-                            <GifCard image={gif.images.original.url}/>
+                            <GifCard 
+                                image={gif.images.original.url}
+                                rating={gif.rating}
+                            />
                         )
                     })}
                 </div>
-                
             </div>
         )
     }
