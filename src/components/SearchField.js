@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import GifCard from "./GifCard";
-import { Link } from "react-router-dom";
-//import GifCard from './GifCard';
 
 export default class SearchField extends Component {
   constructor() {
@@ -10,9 +7,7 @@ export default class SearchField extends Component {
       gifName: "",
       rating: "all",
       allGifs: [],
-      gRatedGifs: [],
-      pgRatedGifs: [],
-      pg13RatedGifs: [],
+      filteredGifs: [],
     };
   }
 
@@ -26,6 +21,7 @@ export default class SearchField extends Component {
   getData = async () => {
     console.log("inside getData");
     try {
+
       //get a response from an api
       let response = await fetch(
         "http://api.giphy.com/v1/gifs/search?q=" +
@@ -43,9 +39,7 @@ export default class SearchField extends Component {
 
       this.setState({
         allGifs: responseObject.data,
-        gRatedGifs: responseObject.data.filter(gif => gif.rating === "g"),
-        pgRatedGifs: responseObject.data.filter(gif => gif.rating === "pg"),
-        pg13RatedGifs: responseObject.data.filter(gif => gif.rating === "pg-13"),
+        filteredGifs: responseObject.data
       })
     }
 
@@ -54,38 +48,81 @@ export default class SearchField extends Component {
     }
   };
 
+  //if the input field is empty, alert the user
+  //if not, fetch the data from an api
   handleSearch=()=>{
     if(this.state.gifName === ""){
       alert("no results")
     }
     else{
       this.getData();
+      this.setState({
+        rating: "all"
+      })
     }
   };
 
+  //change the state of the rating based on dropdown menu choice
   handleRating=(event)=>{
     console.log("inside handle rating");
     this.setState({rating: event.target.value});
   };
+
+  //get the rating and filter the original gif array based on it
+  handleFilter=()=>{
+    switch(this.state.rating){
+      case "g":
+        this.setState({
+          filteredGifs: this.state.allGifs.filter(gif => gif.rating === "g")
+        })
+        break;
+      case "pg":
+        this.setState({
+          filteredGifs: this.state.allGifs.filter(gif => gif.rating === "pg")
+        })
+        break;
+      case "pg-13":
+        this.setState({
+          filteredGifs: this.state.allGifs.filter(gif => gif.rating === "pg-13")
+        })
+        break;
+      default:
+        this.setState({
+          filteredGifs: this.state.allGifs
+        })
+    }
+  }
   
   render() {
     return (
       <div>
-        <input
-          type="text"
-          name="searchInput"
-          placeholder="Search for a gif!"
-          onChange={this.handleChange}
-        />
 
-        <button
-          id="search-btn"
-          onClick={() => this.handleSearch()}
-        >
-          Search
-        </button>       
+        <div id="search-field">
+          <input
+            type="text"
+            name="searchInput"
+            placeholder="Search for a gif!"
+            onChange={this.handleChange}
+          />
+          <button id="search-btn" onClick={() => this.handleSearch()}>Search</button>
+        </div>
+        
+        <div id="filter-field">
+          <label for="ratings">Filter by rating:</label>
+          <select name="ratings" onChange={this.handleRating}>
+            <option value="all" selected>Show all</option>
+            <option value="g">G (General Audience)</option>
+            <option value="pg">PG (Parental Guidance Suggested)</option>
+            <option value="pg-13">PG-13 (Parents Strongly Cautioned)</option>  
+          </select>
+          <button id="filter-btn" onClick={() => this.handleFilter()}>Filter</button>
+        </div>
 
-        <br/>
+        <div id="gif-field">
+          {this.state.filteredGifs.map(gif=>{
+              return <img class="gif" src={gif.images.original.url}/>
+          })}
+        </div>
 
       </div>
     );
