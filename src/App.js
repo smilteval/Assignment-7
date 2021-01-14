@@ -10,6 +10,7 @@ function App() {
       <div className="App-header">
         <h1>Search GIPHY </h1>
       </div>
+
         <div className="SearchField">
           <SearchField/>
         </div>
