@@ -16,6 +16,7 @@
   /* text box to search */
   padding-top: 20px;
   /* background: radial-gradient(circle, black, white); */
+  padding-bottom: 20px;
 }
 
 .App-header {
@@ -23,6 +24,8 @@
   background: url(https://media4.giphy.com/headers/juanbilly/awbw8EaeaHtc.gif); 
   /* make into random gif? */
   height:200px;
+  background-size: 100%;
+  font-family: Impact;
 
 
   /* background-color: #5c4aff; */
