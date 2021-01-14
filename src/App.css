@@ -56,11 +56,11 @@
   }
 }
 
-.gifList{
+#gif-list{
   display: flex;
 }
 
-#gif{
+.gif{
   height: 20vh;
 }
 

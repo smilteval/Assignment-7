@@ -1,5 +1,4 @@
 import './App.css';
-import GifCard from './components/GifCard';
 import SearchField from './components/SearchField';
 import TrendingGifs from './components/TrendingGifs';
 import NavBar from './components/NavBar';
