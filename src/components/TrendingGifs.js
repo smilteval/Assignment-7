@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import App from '../App';
+import SearchField from "./SearchField";
 
 class TrendingGifs extends React.Component {
   constructor() {
@@ -28,6 +29,7 @@ class TrendingGifs extends React.Component {
 
   render() {
     return (
+        
         <div id="gifList">
         { this.state.gifList.map(gif => {
             return (
