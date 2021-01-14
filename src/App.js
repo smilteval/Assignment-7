@@ -12,8 +12,8 @@ function App() {
       <NavBar/>
         
         <Switch>
-        <Route path="/" exact component={TrendingGifs}/>
-        <Route path="/Search" component={SearchField}/>
+        <Route path="/" exact component={SearchField}/>
+        <Route path="/Trending" component={TrendingGifs}/>
         </Switch>
       </Router>
 

@@ -10,12 +10,12 @@ export default class NavBar extends Component {
             <div className="App-header">
                 <h1>GIPHY</h1>
                 <div className="nav-bar">
-                    <Link to="./">
+                    <Link to="./Trending">
                         <button className="nav-button">
                             Trending
                         </button>
                     </Link>
-                    <Link to="./Search">
+                    <Link to="./">
                         <button className="nav-button">
                             Search
                         </button>

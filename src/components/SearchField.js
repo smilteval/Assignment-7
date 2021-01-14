@@ -10,6 +10,22 @@ export default class SearchField extends Component {
       gifName: "",
       gifs: [],
     };
+    this.componentDidMount=this.componentDidMount.bind(this);
+  }
+
+  componentDidMount() {
+    console.log("In Mount");
+    fetch(
+      "http://api.giphy.com/v1/gifs/trending?api_key=W8fWbmNISlnnYSoZC6fsnCxrmYHlodt8"
+    )
+      .then(response => response.json())
+      .then((res) => {
+          console.log(res.data)
+        this.setState({
+          gifs: res.data,
+        });
+        console.log(this.state.gifs);
+      })
   }
 
   //every time a user enters a gif name, update it
@@ -56,7 +72,7 @@ export default class SearchField extends Component {
     }
     else{
       this.getData();
-      <Link to="./Search"></Link>
+      <Link to="./"></Link>
     }
   }
 
