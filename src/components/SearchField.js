@@ -37,12 +37,9 @@ export default class SearchField extends Component {
       //turn the response into a data object
       let data = await response.json();
 
-      this.setState({
-        gifs: data.data, //set the city data to the data received from an api
-      });
-    } catch (error) {
-      console.log(error);
-      this.setState({
+        } catch (error) {
+            console.log(error);
+            this.setState({
         gifs: [],
       });
     }
