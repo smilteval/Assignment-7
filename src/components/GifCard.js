@@ -4,9 +4,7 @@ export default class GifCard extends Component {
 
     render() {
         return (
-            <div>
-                <img src={this.props.image}/>
-            </div>
+            <img id="gif" src={this.props.image}/>
         )
     }
 }
