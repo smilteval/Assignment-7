@@ -24,8 +24,11 @@
   /* Header where it says search GIPHY */
   background: url(https://media4.giphy.com/headers/juanbilly/awbw8EaeaHtc.gif); 
   /* make into random gif? */
-  height:200px;
-  background-size: 100%;
+  height: 180px;
+  background-size: 700px;
+  background-repeat: no-repeat;
+  background-attachment:scroll;
+  background-position: center;
   font-family: Impact;
 
 
