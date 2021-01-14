@@ -7,7 +7,7 @@ export default class SearchField extends Component {
   constructor() {
     super();
     this.state = {
-      gifName: null,
+      gifName: "",
       gifs: [],
     };
   }
@@ -36,14 +36,29 @@ export default class SearchField extends Component {
 
       //turn the response into a data object
       let data = await response.json();
+      this.setState({
+        gifs: data.data
+      })
 
-        } catch (error) {
+    }
+
+    catch (error) {
             console.log(error);
             this.setState({
         gifs: [],
       });
     }
   };
+
+  handleSearch=()=>{
+    if(this.state.gifName === ""){
+      alert("no results")
+    }
+    else{
+      this.getData();
+      <Link to="./Search"></Link>
+    }
+  }
 
   render() {
     return (
@@ -55,16 +70,15 @@ export default class SearchField extends Component {
           onChange={this.handleChange}
         />
 
-        <Link to="./Search">
+        
           <button
             id="search-btn"
             onClick={() => {
-              this.getData();
+              this.handleSearch();
             }}
           >
             Search
           </button>
-        </Link>
 
         <div id="gifList">
           <br />
