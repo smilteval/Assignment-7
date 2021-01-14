@@ -63,6 +63,7 @@ export default class SearchField extends Component {
   render() {
     return (
       <div>
+        <br/><br/>
         <input
           type="text"
           name="searchInput"

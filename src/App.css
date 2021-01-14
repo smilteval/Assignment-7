@@ -63,3 +63,12 @@
 #gif{
   height: 20vh;
 }
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-button {
+  margin: 5px 5px 5px 5px;
+}
