@@ -8,8 +8,11 @@ export default class SearchField extends Component {
     super();
     this.state = {
       gifName: "",
-      gifs: [],
-      rating: "",
+      rating: "all",
+      allGifs: [],
+      gRatedGifs: [],
+      pgRatedGifs: [],
+      pg13RatedGifs: [],
     };
   }
 
@@ -36,18 +39,18 @@ export default class SearchField extends Component {
       }
 
       //turn the response into a data object
-      let data = await response.json();
-      this.setState({
-        gifs: data.data
-      })
+      let responseObject = await response.json();
 
+      this.setState({
+        allGifs: responseObject.data,
+        gRatedGifs: responseObject.data.filter(gif => gif.rating === "g"),
+        pgRatedGifs: responseObject.data.filter(gif => gif.rating === "pg"),
+        pg13RatedGifs: responseObject.data.filter(gif => gif.rating === "pg-13"),
+      })
     }
 
     catch (error) {
-            console.log(error);
-            this.setState({
-        gifs: [],
-      });
+      console.log(error);
     }
   };
 
@@ -57,7 +60,6 @@ export default class SearchField extends Component {
     }
     else{
       this.getData();
-      <Link to="./Search"></Link>
     }
   };
 
@@ -65,32 +67,6 @@ export default class SearchField extends Component {
     console.log("inside handle rating");
     this.setState({rating: event.target.value});
   };
-
-  handleFilter=()=>{
-    console.log("inside handle filter");
-
-    //filters gifs with rating g
-    if(this.state.rating === "g"){
-      this.setState({
-        gifs: this.state.gifs.filter(gif => gif.rating === "g")
-      })
-    }
-
-    //filters gifs with rating pg
-    if(this.state.rating === "pg"){
-      this.setState({
-        gifs: this.state.gifs.filter(gif => gif.rating === "pg")
-      })
-    }
-
-    //filters gifs with rating pg
-    if(this.state.rating === "pg-13"){
-      this.setState({
-        gifs: this.state.gifs.filter(gif => gif.rating === "pg-13")
-      })
-    }
-
-  }
   
   render() {
     return (
@@ -107,31 +83,10 @@ export default class SearchField extends Component {
           onClick={() => this.handleSearch()}
         >
           Search
-        </button>
+        </button>       
 
-        <div>
-          <label for="ratings">Filter by rating:</label>
-          <select name="ratings" onChange={this.handleRating}>
-            <option value="all" selected>Show all</option>
-            <option value="g">g</option>
-            <option value="pg">pg</option>
-            <option value="pg-13">pg-13</option>  
-          </select>
+        <br/>
 
-          <button
-            id="filter-btn"
-            onClick={() => this.handleFilter()}
-          > 
-            Filter
-          </button>
-        </div>
-        
-        <div id="gifList">
-          <br />
-          {this.state.gifs.map((gif) => {
-            return <GifCard image={gif.images.original.url} rating={gif.rating} />;
-          })}
-        </div>
       </div>
     );
   }
