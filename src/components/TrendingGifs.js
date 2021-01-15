@@ -30,7 +30,7 @@ class TrendingGifs extends React.Component {
   render() {
     return (
         
-        <div id="gif-list">
+        <div>
         { this.state.gifList.map(gif => {
             return (
                 <img class="gif" src={gif.images.original.url} alt="gif"/>
