@@ -35,7 +35,7 @@ class RandomSearch extends React.Component {
       render() {
         return (
 
-            <div id="gifList">
+            <div>
                 <br/><br/>
             { this.state.gifList.map(gif => {
                 return (
