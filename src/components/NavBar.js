@@ -7,17 +7,25 @@ export default class NavBar extends Component {
 
     render() {
         return(
-            <div className="App-header">
-                <h1>GIPHY</h1>
+            <div>
+                <div className="App-header">
+                    <h1>GIPHY</h1>
+                </div>
+
                 <div className="nav-bar">
-                    <Link to="./">
+                    <Link to="/">
                         <button className="nav-button">
-                            Trending
+                            TRENDING
                         </button>
                     </Link>
-                    <Link to="./Search">
+                    <Link to="/Search">
                         <button className="nav-button">
-                            Search
+                            SEARCH
+                        </button>
+                    </Link>
+                    <Link to="/Random">
+                        <button className="nav-button" onClick={() => window.location.href="/Random"}>
+                            RANDOM
                         </button>
                     </Link>
                 </div>
