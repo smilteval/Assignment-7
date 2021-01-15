@@ -21,6 +21,7 @@ export default class NavBar extends Component {
                     <Link to="/Search">
                         <button className="nav-button">
                             SEARCH
+
                         </button>
                     </Link>
                     <Link to="/Random">
@@ -29,7 +30,7 @@ export default class NavBar extends Component {
                         </button>
                     </Link>
                 </div>
-            </div>
+            </div> 
         )
     }
 }
