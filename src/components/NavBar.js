@@ -21,6 +21,12 @@ export default class NavBar extends Component {
                     <Link to="/Search">
                         <button className="nav-button">
                             SEARCH
+
+                        </button>
+                    </Link>
+                    <Link to="/Random">
+                        <button className="nav-button" onClick={() => window.location.href="/Random"}>
+                            RANDOM
                         </button>
                     </Link>
                 </div>
