@@ -95,10 +95,12 @@ export default class SearchField extends Component {
   
   render() {
     return (
-      <div>
+      <div id="search-filter-field">
 
         <div id="search-field">
+          <label id="search-text" for="ratings">Enter a Keyword:</label>
           <input
+            id="search-input"
             type="text"
             name="searchInput"
             placeholder="Search for a gif!"
@@ -108,8 +110,8 @@ export default class SearchField extends Component {
         </div>
         
         <div id="filter-field">
-          <label for="ratings">Filter by rating:</label>
-          <select name="ratings" onChange={this.handleRating}>
+          <label id="filter-text" for="ratings">Filter by rating:</label>
+          <select id="dropdown" name="ratings" onChange={this.handleRating}>
             <option value="all" selected>Show all</option>
             <option value="g">G (General Audience)</option>
             <option value="pg">PG (Parental Guidance Suggested)</option>

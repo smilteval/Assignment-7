@@ -50,3 +50,57 @@
   color: white;
   font-size: 18px;
 }
+
+#search-filter-field{
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* SEARCH */
+
+#search-field{
+  background-color: black;
+  margin: auto;
+  padding: 20px;
+  width: 50%;
+  border-radius: 50px;
+}
+
+#search-text{
+  font-size: 20px;
+  margin-right: 10px;
+  color:white;
+}
+
+#search-input{
+  padding: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+#search-btn{
+  padding: 5px 10px;
+}
+
+/* FILTER */
+
+#filter-field{
+  background-color: #ffe7e7;
+  margin: auto;
+  padding: 20px;
+}
+
+#filter-text{
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+#dropdown{
+  padding: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+#filter-btn{
+  padding: 5px 10px;
+}
