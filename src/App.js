@@ -1,4 +1,5 @@
 import './App.css';
+import React from "react";
 import SearchField from './components/SearchField';
 import TrendingGifs from './components/TrendingGifs';
 import NavBar from './components/NavBar';
