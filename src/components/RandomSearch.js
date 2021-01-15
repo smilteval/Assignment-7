@@ -14,7 +14,7 @@ class RandomSearch extends React.Component {
     componentDidMount() {
         console.log("In Mount");
         fetch(
-          "http://api.giphy.com/v1/gifs/random?api_key=W8fWbmNISlnnYSoZC6fsnCxrmYHlodt8"
+          "https://api.giphy.com/v1/gifs/random?api_key=W8fWbmNISlnnYSoZC6fsnCxrmYHlodt8"
         )
           .then(response => response.json())
           .then((res) => {

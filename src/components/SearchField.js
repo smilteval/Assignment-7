@@ -24,7 +24,7 @@ export default class SearchField extends Component {
 
       //get a response from an api
       let response = await fetch(
-        "http://api.giphy.com/v1/gifs/search?q=" +
+        "https://api.giphy.com/v1/gifs/search?q=" +
           this.state.gifName +
           "&api_key=W8fWbmNISlnnYSoZC6fsnCxrmYHlodt8"
       );
