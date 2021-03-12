@@ -1,7 +1,7 @@
 <img src="giphy-header.png"/>
 
 <!-------------------------------------------------------------------------------------------------------------------------->
-
+<hr>
 A front-end assignment completed during the NYC Tech Talent Pipeline Program. <br>
 App that allows users to search gifs by keyword and filter them by rating (based on the motion picture content rating system)
 
